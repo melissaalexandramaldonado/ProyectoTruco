@@ -1,33 +1,24 @@
 # TrucoArgentino2D
 
-A [libGDX](https://libgdx.com/) project generated with [gdx-liftoff](https://github.com/libgdx/gdx-liftoff).
+### Integrantes:
+* Melissa Maldonado y Tomas Ortega
 
-This project was generated with a template including simple application launchers and an `ApplicationAdapter` extension that draws libGDX logo.
+### Descripción del Videojuego:
+Un videojuego clásico de Truco Argentino en 2D desarrollado como proyecto escolar.
 
-## Platforms
+### Tecnologías:
+* LibGDX (Java 21)
+* IntelliJ IDEA
 
-- `core`: Main module with the application logic shared by all platforms.
-- `lwjgl3`: Primary desktop platform using LWJGL3; was called 'desktop' in older docs.
+### Documentación:
+* [https://github.com/melissaalexandramaldonado/ProyectoTruco/wiki/Propuesta-del-Proyecto]
 
-## Gradle
+  ### Estructura del Proyecto:
+* `core/`: Contiene la lógica principal del videojuego, clases de las cartas, mecánicas del truco y control de pantallas.
+* `lwjgl3/`: Módulo de escritorio encargado del lanzamiento y configuración de la ventana principal en PC usando LWJGL3.
+* `assets/`: Almacena los recursos visuales (imágenes, texturas de las cartas) y sonoros del juego.
 
-This project uses [Gradle](https://gradle.org/) to manage dependencies.
-The Gradle wrapper was included, so you can run Gradle tasks using `gradlew.bat` or `./gradlew` commands.
-Useful Gradle tasks and flags:
-
-- `--continue`: when using this flag, errors will not stop the tasks from running.
-- `--daemon`: thanks to this flag, Gradle daemon will be used to run chosen tasks.
-- `--offline`: when using this flag, cached dependency archives will be used.
-- `--refresh-dependencies`: this flag forces validation of all dependencies. Useful for snapshot versions.
-- `build`: builds sources and archives of every project.
-- `cleanEclipse`: removes Eclipse project data.
-- `cleanIdea`: removes IntelliJ project data.
-- `clean`: removes `build` folders, which store compiled classes and built archives.
-- `eclipse`: generates Eclipse project data.
-- `idea`: generates IntelliJ project data.
-- `lwjgl3:jar`: builds application's runnable jar, which can be found at `lwjgl3/build/libs`.
-- `lwjgl3:run`: starts the application.
-- `test`: runs unit tests (if any).
-
-Note that most tasks that are not specific to a single project can be run with `name:` prefix, where the `name` should be replaced with the ID of a specific project.
-For example, `core:clean` removes `build` folder only from the `core` project.
+### Cómo ejecutar el proyecto:
+Para correr el videojuego de forma local, clonar el repositorio y ejecutar el siguiente comando en la terminal de IntelliJ:
+```bash
+./gradlew lwjgl3:run
