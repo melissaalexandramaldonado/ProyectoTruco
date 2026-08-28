@@ -1,7 +1,7 @@
 # TrucoArgentino2D
 
 ### Integrantes:
-* Melissa Maldonado y Tomas Ortega
+* Melissa Maldonado y Tomás Ortega
 
 ### Descripción del Videojuego:
 Un videojuego clásico de Truco Argentino en 2D desarrollado como proyecto escolar.
