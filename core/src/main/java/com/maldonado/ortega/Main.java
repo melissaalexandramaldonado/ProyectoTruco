@@ -1,32 +1,40 @@
 package com.maldonado.ortega;
 
-import com.badlogic.gdx.ApplicationAdapter;
-import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.Game;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.utils.ScreenUtils;
 
-/** {@link com.badlogic.gdx.ApplicationListener} implementation shared by all platforms. */
-public class Main extends ApplicationAdapter {
-    private SpriteBatch batch;
-    private Texture image;
+public class Main extends Game {
+
+    public static final float ANCHO = 1280f;
+    public static final float ALTO  = 720f;
+
+    public SpriteBatch batch;
+    public BitmapFont fuente;
+    public BitmapFont fuenteTitulo;
+    public Recursos recursos;
 
     @Override
     public void create() {
         batch = new SpriteBatch();
-        image = new Texture("libgdx.png");
-    }
 
-    @Override
-    public void render() {
-        ScreenUtils.clear(0.15f, 0.15f, 0.2f, 1f);
-        batch.begin();
-        batch.draw(image, 140, 210);
-        batch.end();
+        fuente = new BitmapFont();
+        fuente.getData().setScale(1.8f);
+
+        fuenteTitulo = new BitmapFont();
+        fuenteTitulo.getData().setScale(4f);
+
+        recursos = new Recursos();
+
+        setScreen(new PantallaMenu(this));
     }
 
     @Override
     public void dispose() {
+        super.dispose();
         batch.dispose();
-        image.dispose();
+        fuente.dispose();
+        fuenteTitulo.dispose();
+        recursos.dispose();
     }
 }
