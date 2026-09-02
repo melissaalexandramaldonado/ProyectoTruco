@@ -1,5 +1,7 @@
 package com.maldonado.ortega;
 
+import com.badlogic.gdx.graphics.g2d.Animation;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
@@ -13,6 +15,8 @@ public class Recursos implements Disposable {
     public final Texture mesa, cartas, dorso, giro, pixel;
     public final Sound clic, repartir, tirar, gana;
     public final Music musica;
+    public final TextureRegion[][] regionesCartas;
+    public final Animation<TextureRegion> animacionGiro;
 
     private boolean silenciado = false;
     private float volumen = 0.7f;
@@ -22,6 +26,9 @@ public class Recursos implements Disposable {
         cartas = new Texture(Gdx.files.internal("imagenes/cartas.png"));
         dorso  = new Texture(Gdx.files.internal("imagenes/dorso.png"));
         giro   = new Texture(Gdx.files.internal("imagenes/giro.png"));
+        regionesCartas = TextureRegion.split(cartas, Carta.ANCHO, Carta.ALTO);
+        TextureRegion[][] cuadros = TextureRegion.split(giro, Carta.ANCHO, Carta.ALTO);
+        animacionGiro = new Animation<>(0.055f, cuadros[0]);
 
         Pixmap pm = new Pixmap(1, 1, Pixmap.Format.RGBA8888);
         pm.setColor(Color.WHITE);
@@ -46,7 +53,12 @@ public class Recursos implements Disposable {
 
     public void alternarSilencio() {
         silenciado = !silenciado;
-        musica.setVolume(silenciado ? 0f : volumen * 0.4f);
+        if (silenciado) {
+            clic.stop(); repartir.stop(); tirar.stop(); gana.stop();
+            musica.setVolume(0f);
+        } else {
+            musica.setVolume(volumen * 0.4f);
+        }
     }
 
     public void cambiarVolumen(float delta) {
