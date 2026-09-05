@@ -11,6 +11,9 @@ juego incluye las apuestas clasicas (Envido, Real Envido, Falta Envido, Truco, R
 Vale Cuatro) y suma dos variantes propias: "Ultra Envido" y "Vale 6". La estetica es pixel
 art y el juego se controla con el mouse.
 
+## Video de demostración
+https://drive.google.com/file/d/1WEVFCH_as3rALLEE5G7-uMiSR8bvnFz1/view
+
 ### Tecnologias:
 * LibGDX 1.14.0
 * Java 21
@@ -58,3 +61,6 @@ En Linux o macOS:
 3. Tambien se puede ejecutar desde el IDE: abrir la carpeta del proyecto en IntelliJ IDEA
 como proyecto Gradle, esperar a que termine la importacion y ejecutar la clase
 `Lwjgl3Launcher` del modulo `lwjgl3`.
+
+
+
