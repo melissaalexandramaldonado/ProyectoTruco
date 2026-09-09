@@ -3,64 +3,98 @@
 ### Integrantes:
 * Melissa Alexandra Maldonado
 * Tomas Lautaro Ortega
+# Truco Argentino en 2D
 
-### Descripcion del Videojuego:
-Adaptacion digital del Truco Argentino en 2D para PC. El jugador se enfrenta uno contra uno
-a una inteligencia artificial, con el mazo espanol de 40 cartas y partidas a 30 puntos. El
-juego incluye las apuestas clasicas (Envido, Real Envido, Falta Envido, Truco, Retruco y
-Vale Cuatro) y suma dos variantes propias: "Ultra Envido" y "Vale 6". La estetica es pixel
-art y el juego se controla con el mouse.
+## Descripción
 
-## Video de demostración
-https://drive.google.com/file/d/1WEVFCH_as3rALLEE5G7-uMiSR8bvnFz1/view
+Truco Argentino en 2D es un videojuego de cartas basado en el clásico Truco Argentino, desarrollado para PC en modalidad singleplayer.
 
-### Tecnologias:
-* LibGDX 1.14.0
+El jugador se enfrentará a un oponente controlado por inteligencia artificial. El juego incorpora las reglas tradicionales del Truco y dos variantes creadas por el equipo: Ultra Envido y Vale 6.
+
+El proyecto busca aplicar conocimientos de Programación Orientada a Objetos, lógica algorítmica, inteligencia artificial, interfaces gráficas y bases de datos SQL.
+
+## Tecnologías utilizadas
+
 * Java 21
-* Gradle (con wrapper incluido en el repositorio)
-* IntelliJ IDEA
-* Plataforma objetivo: Escritorio (Windows, Linux y macOS) a traves del modulo LWJGL3
+* LibGDX 1.14.0
+* LWJGL3
+* SQLite
+* JDBC
+* Gradle
+* Git
+* GitHub
 
-### Documentacion:
-* [Propuesta del Proyecto](https://github.com/melissaalexandramaldonado/ProyectoTruco/wiki/Propuesta-del-Proyecto)
-* [Registro de cambios](CHANGELOG.md)
+### Plataforma objetivo
 
-### Estructura del Proyecto:
-* `core/`: contiene la logica principal del videojuego, las clases de las cartas, las mecanicas del truco y el control de pantallas.
-* `lwjgl3/`: modulo de escritorio encargado del lanzamiento y la configuracion de la ventana principal en PC usando LWJGL3.
-* `assets/`: almacena los recursos visuales (imagenes y texturas de las cartas) y los sonidos del juego.
+El proyecto está destinado a computadoras de escritorio (PC) y utiliza LWJGL3 como backend de escritorio de LibGDX.
 
-### Requisitos previos:
-* Tener instalado el JDK 21 o superior. Se puede verificar ejecutando `java -version` en la terminal.
-* Tener instalado Git.
-* No hace falta instalar Gradle, porque el proyecto incluye el Gradle Wrapper.
+## Base de datos SQL
 
-### Como compilar y ejecutar:
+El proyecto utilizará SQLite como motor de base de datos SQL local.
 
-1. Clonar el repositorio:
+La conexión entre Java y SQLite se realizará mediante JDBC.
+
+La base de datos permitirá almacenar información persistente del jugador y de las partidas, incluso después de cerrar el juego.
+
+### Información a persistir
+
+* Nombre del jugador.
+* Partidas jugadas.
+* Partidas ganadas.
+* Partidas perdidas.
+* Dificultad seleccionada.
+* Puntajes obtenidos.
+* Cantidad de veces que se cantó Truco.
+* Cantidad de veces que se cantó Envido.
+* Cantidad de veces que se utilizó Ultra Envido.
+* Cantidad de veces que se utilizó Vale 6.
+* Mejor racha de victorias.
+* Historial de partidas.
+* Configuraciones seleccionadas.
+
+### Tablas previstas
+
+* Jugadores
+* Partidas
+* EstadisticasJugador
+* HistorialCantos
+* Configuracion
+
+### Operaciones SQL previstas
+
+* INSERT: para guardar nuevos jugadores, partidas y estadísticas.
+* SELECT: para consultar información y estadísticas.
+* UPDATE: para actualizar estadísticas y configuraciones.
+* DELETE: para eliminar registros cuando sea necesario.
+
+## Requisitos
+
+Para ejecutar el proyecto se necesita:
+
+* JDK 21 instalado.
+* Git instalado.
+* Windows para utilizar el comando de ejecución indicado.
+
+## Instalación y ejecución
+
+Clonar el repositorio:
 
 ```bash
 git clone https://github.com/melissaalexandramaldonado/ProyectoTruco.git
 cd ProyectoTruco
 ```
 
-2. Ejecutar el juego desde la terminal.
-
-En Windows:
+Ejecutar el proyecto en Windows:
 
 ```bash
 gradlew.bat lwjgl3:run
 ```
 
-En Linux o macOS:
+El proyecto se ejecutará mediante el backend LWJGL3 para escritorio.
 
-```bash
-./gradlew lwjgl3:run
-```
+## Wiki
 
-3. Tambien se puede ejecutar desde el IDE: abrir la carpeta del proyecto en IntelliJ IDEA
-como proyecto Gradle, esperar a que termine la importacion y ejecutar la clase
-`Lwjgl3Launcher` del modulo `lwjgl3`.
+La documentación completa del proyecto y la propuesta formal se encuentran en la Wiki del repositorio.
 
 
 
