@@ -26,7 +26,9 @@ El proyecto busca aplicar conocimientos de Programación Orientada a Objetos, l�
 
 ### Plataforma objetivo
 
-El proyecto está destinado a computadoras de escritorio (PC) y utiliza LWJGL3 como backend de escritorio de LibGDX.
+- Escritorio: Windows, Linux y macOS (implementado mediante LWJGL3).
+- Web: no contemplada en esta etapa.
+- Móvil: no contemplada en esta etapa.
 
 ## Base de datos SQL
 
