@@ -2,7 +2,7 @@
 
 ## [1.1.0] - 2026-09-02
 
-### Added
+### Agregado
 
 * Prototipo jugable del Truco Argentino contra una IA, con partidas a 15 puntos.
 * Clase `Carta` con la jerarquia completa del truco y `Mazo` con mezclado Fisher-Yates.
@@ -18,29 +18,29 @@
 * Controles de volumen y silencio.
 * Recursos graficos propios: mazo espanol de 40 cartas, dorso, spritesheet de animacion y fondo de mesa.
 
-### Changed
+### Modificado
 
 * `Main` pasa de extender `ApplicationAdapter` a extender `Game` para permitir el cambio de pantallas.
 * Resolucion de la ventana ampliada de 640x480 a 1280x720.
 * Carga de recursos centralizada en la clase `Recursos`, con liberacion de memoria en `dispose()`.
 
-### Fixed
+### Arreglado
 
 * El silencio ahora tambien detiene los efectos que ya estaban sonando.
 * Efecto de reparto acortado a 1,5 segundos.
 * Correccion de la superposicion entre el mensaje del HUD y las cartas del rival.
 
 ## [1.0.1] - 2026-09-01
-### Changed
+### Modificado
 * Se amplio el README con la plataforma de desarrollo objetivo, los requisitos previos y las instrucciones de clonado y ejecucion para Windows, Linux y macOS.
 * Se amplio la descripcion del videojuego.
 
-### Fixed
+### Arreglado
 * Se corrigio el enlace a la Propuesta del Proyecto en el README, que no estaba escrito como enlace valido.
 * Se unifico la propuesta en la Wiki: la version completa quedo en la pagina "Propuesta del Proyecto" y el Home paso a ser el indice.
 
 ## [1.0.0] - 2026-07-17
-### Added
+### Agregado
 * Estructura inicial del proyecto base utilizando LibGDX Liftoff con Java 21.
 * Configuración del entorno de desarrollo en IntelliJ IDEA y repositorio Git público.
 * Creación de la documentación obligatoria (Propuesta en la Wiki y README detallado).
