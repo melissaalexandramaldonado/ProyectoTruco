@@ -96,7 +96,8 @@ El proyecto se ejecutará mediante el backend LWJGL3 para escritorio.
 
 ## Wiki
 
-La documentación completa del proyecto y la propuesta formal se encuentran en la Wiki del repositorio.
+La documentación completa del proyecto y la propuesta formal se encuentran en la [Wiki del proyecto](https://github.com/melissaalexandramaldonado/ProyectoTruco/wiki).
+
 
 
 
