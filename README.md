@@ -30,13 +30,35 @@ El proyecto busca aplicar conocimientos de Programación Orientada a Objetos, l�
 - Web: no contemplada en esta etapa.
 - Móvil: no contemplada en esta etapa.
 
-## Base de datos SQL
+### Base de datos
 
-El proyecto utilizará SQLite como motor de base de datos SQL local.
+Para la persistencia de datos se utilizará SQLite junto con JDBC.
 
-La conexión entre Java y SQLite se realizará mediante JDBC.
+La base de datos permitirá almacenar información relacionada con los jugadores,
+partidas y estadísticas del juego.
 
-La base de datos permitirá almacenar información persistente del jugador y de las partidas, incluso después de cerrar el juego.
+Las tablas previstas son:
+
+- `Jugadores`
+- `Partidas`
+- `EstadisticasJugador`
+- `HistorialCantos`
+- `Configuracion`
+
+Las tablas tendrán sus respectivas claves primarias y, cuando corresponda,
+claves foráneas para establecer las relaciones entre jugadores, partidas y
+estadísticas.
+
+Las operaciones previstas incluyen:
+
+- `INSERT` para registrar nuevos jugadores, partidas y estadísticas.
+- `SELECT` para consultar información.
+- `UPDATE` para modificar datos existentes.
+- `DELETE` para eliminar datos cuando sea necesario.
+
+La implementación de la base de datos se realizará mediante SQLite y la
+conexión con Java se realizará utilizando JDBC.
+
 
 ### Información a persistir
 
