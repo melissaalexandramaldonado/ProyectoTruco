@@ -32,89 +32,80 @@ El proyecto busca aplicar conocimientos de Programación Orientada a Objetos, l�
 
 ### Base de datos
 
-Para la persistencia de datos se utilizará SQLite junto con JDBC.
+El proyecto utilizará SQLite como motor de base de datos y JDBC para realizar la conexión entre Java y SQLite.
 
-La base de datos permitirá almacenar información relacionada con los jugadores,
-partidas y estadísticas del juego.
+La base de datos permitirá almacenar información de los jugadores, las partidas realizadas, las estadísticas y el historial de los cantos realizados durante las partidas.
 
-Las tablas previstas son:
+Información a persistir
 
-- `Jugadores`
-- `Partidas`
-- `EstadisticasJugador`
-- `HistorialCantos`
-- `Configuracion`
+Se almacenará la siguiente información:
 
-Las tablas tendrán sus respectivas claves primarias y, cuando corresponda,
-claves foráneas para establecer las relaciones entre jugadores, partidas y
-estadísticas.
+Nombre del jugador.
+Partidas jugadas.
+Partidas ganadas.
+Partidas perdidas.
+Dificultad seleccionada.
+Resultado de cada partida.
+Puntajes obtenidos por el jugador y la IA.
+Historial de cantos realizados durante las partidas.
+Configuración de sonido y volumen.
+Tablas
 
-Las operaciones previstas incluyen:
+La base de datos estará formada por las siguientes tablas:
 
-- `INSERT` para registrar nuevos jugadores, partidas y estadísticas.
-- `SELECT` para consultar información.
-- `UPDATE` para modificar datos existentes.
-- `DELETE` para eliminar datos cuando sea necesario.
+Jugadores
 
-La implementación de la base de datos se realizará mediante SQLite y la
-conexión con Java se realizará utilizando JDBC.
+id_jugador: INTEGER, clave primaria.
+nombre: TEXT.
 
+Partidas
 
-### Información a persistir
+id_partida: INTEGER, clave primaria.
+id_jugador: INTEGER, clave foránea hacia Jugadores.
+fecha: TEXT.
+dificultad: TEXT.
+resultado: TEXT.
+puntos_jugador: INTEGER.
+puntos_ia: INTEGER.
 
-* Nombre del jugador.
-* Partidas jugadas.
-* Partidas ganadas.
-* Partidas perdidas.
-* Dificultad seleccionada.
-* Puntajes obtenidos.
-* Cantidad de veces que se cantó Truco.
-* Cantidad de veces que se cantó Envido.
-* Cantidad de veces que se utilizó Ultra Envido.
-* Cantidad de veces que se utilizó Vale 6.
-* Mejor racha de victorias.
-* Historial de partidas.
-* Configuraciones seleccionadas.
+EstadisticasJugador
 
-### Tablas previstas
+id_estadistica: INTEGER, clave primaria.
+id_jugador: INTEGER, clave foránea hacia Jugadores.
+partidas_jugadas: INTEGER.
+partidas_ganadas: INTEGER.
+partidas_perdidas: INTEGER.
 
-* Jugadores
-* Partidas
-* EstadisticasJugador
-* HistorialCantos
-* Configuracion
+HistorialCantos
 
-### Operaciones SQL previstas
+id_canto: INTEGER, clave primaria.
+id_partida: INTEGER, clave foránea hacia Partidas.
+jugador: TEXT.
+canto: TEXT.
+respuesta: TEXT.
 
-* INSERT: para guardar nuevos jugadores, partidas y estadísticas.
-* SELECT: para consultar información y estadísticas.
-* UPDATE: para actualizar estadísticas y configuraciones.
-* DELETE: para eliminar registros cuando sea necesario.
+Configuracion
 
-## Requisitos
+id_configuracion: INTEGER, clave primaria.
+volumen: INTEGER.
+sonido_activado: INTEGER.
+Relaciones
+Un jugador puede participar en muchas partidas.
+Un jugador tiene un registro de estadísticas.
+Una partida puede tener muchos cantos.
+Cada partida pertenece a un jugador.
+Cada registro de estadísticas pertenece a un jugador.
+Cada canto pertenece a una partida.
+Operaciones SQL previstas
 
-Para ejecutar el proyecto se necesita:
+Se utilizarán las siguientes operaciones:
 
-* JDK 21 instalado.
-* Git instalado.
-* Windows para utilizar el comando de ejecución indicado.
+INSERT: registrar jugadores, partidas, estadísticas y cantos.
+SELECT: consultar jugadores, partidas, estadísticas e historial.
+UPDATE: actualizar estadísticas y configuraciones.
+DELETE: eliminar registros cuando sea necesario.
 
-## Instalación y ejecución
-
-Clonar el repositorio:
-
-```bash
-git clone https://github.com/melissaalexandramaldonado/ProyectoTruco.git
-cd ProyectoTruco
-```
-
-Ejecutar el proyecto en Windows:
-
-```bash
-gradlew.bat lwjgl3:run
-```
-
-El proyecto se ejecutará mediante el backend LWJGL3 para escritorio.
+La conexión entre Java y SQLite se realizará mediante JDBC.
 
 ## Wiki
 
