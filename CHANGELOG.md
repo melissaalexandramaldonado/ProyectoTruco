@@ -21,15 +21,6 @@
 * Creación del archivo `CHANGELOG.md` para registrar los cambios realizados en el proyecto.
 * Incorporación de la propuesta formal completa del proyecto a la Wiki.
 * Planificación de la base de datos utilizando SQLite y JDBC, incluyendo tablas, campos, claves, relaciones y operaciones SQL.
-* Prototipo jugable del Truco Argentino contra una IA, con partidas a 15 puntos.
-* Clase `Carta` con la jerarquía completa del truco y `Mazo` con mezclado Fisher-Yates.
-* Clase `ControlEntrada` basada en `InputAdapter` para procesar mouse y teclado.
-* Gestión de pantallas con `Game` y `Screen`: menú, juego y fin de partida.
-* IA rival con decisión probabilística basada en la evaluación de sus cartas.
-* Mecánicas de apuesta: Truco y Vale 6, con respuesta de la IA.
-* Música de fondo y efectos de sonido.
-* Controles de volumen y silencio.
-* Recursos gráficos propios para el juego.
 
 
 ### Modificado
