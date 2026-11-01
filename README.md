@@ -3,7 +3,6 @@
 ### Integrantes:
 * Melissa Alexandra Maldonado
 * Tomas Lautaro Ortega
-# Truco Argentino en 2D
 
 ## Descripción
 
@@ -111,6 +110,35 @@ La conexión entre Java y SQLite se realizará mediante JDBC.
 
 La documentación completa del proyecto y la propuesta formal se encuentran en la [Wiki del proyecto](https://github.com/melissaalexandramaldonado/ProyectoTruco/wiki).
 
+## Requisitos previos
 
+* JDK 21 o superior. Se puede verificar ejecutando `java -version` en la terminal.
+* Git instalado.
+* No es necesario instalar Gradle: el proyecto incluye el Gradle Wrapper.
+
+## Compilación y ejecución
+
+1. Clonar el repositorio:
+
+```bash
+git clone https://github.com/melissaalexandramaldonado/ProyectoTruco.git
+cd ProyectoTruco
+```
+
+2. Ejecutar el juego desde la terminal.
+
+En Windows:
+
+```bash
+gradlew.bat lwjgl3:run
+```
+
+En Linux o macOS:
+
+```bash
+./gradlew lwjgl3:run
+```
+
+3. También se puede ejecutar desde el IDE: abrir la carpeta del proyecto en IntelliJ IDEA como proyecto Gradle, esperar a que termine la importación y ejecutar la clase `Lwjgl3Launcher` del módulo `lwjgl3`.
 
 
