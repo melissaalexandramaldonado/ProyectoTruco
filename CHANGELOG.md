@@ -1,51 +1,35 @@
 # Changelog
 
-#### [0.1.0] - 2026-09-02
+## [0.1.0] - 2026-09-02
 
 ### Agregado
 
+* Estructura inicial del proyecto generada con LibGDX Liftoff sobre Java 21, con los módulos `core` y `lwjgl3`.
+* Archivo `.gitignore` para excluir archivos generados y temporales del proyecto.
+* Documentación del proyecto: `README.md`, `CHANGELOG.md` y la propuesta formal completa en la Wiki.
+* Planificación de la base de datos con SQLite y JDBC: tablas, campos, claves, relaciones y operaciones SQL previstas.
 * Prototipo jugable del Truco Argentino contra una IA, con partidas a 15 puntos.
-* Clase `Carta` con la jerarquia completa del truco y `Mazo` con mezclado Fisher-Yates.
-* Clase `ControlEntrada` basada en `InputAdapter` para procesar mouse y teclado, con conversion de coordenadas de pantalla a coordenadas del mundo.
-* Seleccion de cartas por area rectangular, con realce visual al pasar el mouse.
-* Animacion de giro de carta a partir de un spritesheet de 8 cuadros usando la clase `Animation`.
-* Gestion de pantallas con `Game` y `Screen`: menu, juego y fin de partida, mas los estados de juego en curso y pausa.
-* Camara ortografica con `FitViewport` para el mundo y una segunda para el HUD, adaptables a cualquier tamano de ventana.
-* HUD fijo con puntaje, numero de baza, puntos en juego y estado del sonido.
-* IA rival con decision probabilistica basada en la evaluacion de sus propias cartas.
-* Mecanicas propias de apuesta: cantar Truco y Vale 6, con respuesta de la IA.
-* Musica de fondo en bucle y efectos de sonido para repartir, tirar carta, clic y victoria.
+* Clase `Carta` con la jerarquía completa del truco y clase `Mazo` con mezclado Fisher-Yates.
+* Clase `ControlEntrada` basada en `InputAdapter` para procesar mouse y teclado, con conversión de coordenadas de pantalla a coordenadas del mundo.
+* Selección de cartas por área rectangular, con realce visual al pasar el mouse.
+* Animación de giro de carta a partir de un spritesheet de 8 cuadros usando la clase `Animation`.
+* Gestión de pantallas con `Game` y `Screen`: menú, juego y fin de partida, más los estados de juego en curso y pausa.
+* Cámara ortográfica con `FitViewport` para el mundo y una segunda para el HUD, adaptables a cualquier tamaño de ventana.
+* HUD fijo con puntaje, número de baza, puntos en juego y estado del sonido.
+* IA rival con decisión probabilística basada en la evaluación de sus propias cartas.
+* Mecánicas propias de apuesta: cantar Truco y Vale 6, con respuesta de la IA.
+* Música de fondo en bucle y efectos de sonido para repartir, tirar carta, clic y victoria.
 * Controles de volumen y silencio.
-* Recursos graficos propios: mazo espanol de 40 cartas, dorso, spritesheet de animacion y fondo de mesa.
-* Configuración del archivo `.gitignore` para excluir archivos generados y archivos temporales del proyecto.
-* Creación del archivo `CHANGELOG.md` para registrar los cambios realizados en el proyecto.
-* Incorporación de la propuesta formal completa del proyecto a la Wiki.
-* Planificación de la base de datos utilizando SQLite y JDBC, incluyendo tablas, campos, claves, relaciones y operaciones SQL.
-
+* Recursos gráficos propios: mazo español de 40 cartas, dorso, spritesheet de animación y fondo de mesa.
 
 ### Modificado
 
 * `Main` pasa de extender `ApplicationAdapter` a extender `Game` para permitir el cambio de pantallas.
-* Resolucion de la ventana ampliada de 640x480 a 1280x720.
-* Carga de recursos centralizada en la clase `Recursos`, con liberacion de memoria en `dispose()`.
+* Resolución de la ventana ampliada de 640x480 a 1280x720.
+* Carga de recursos centralizada en la clase `Recursos`, con liberación de memoria en `dispose()`.
 
 ### Arreglado
 
-* El silencio ahora tambien detiene los efectos que ya estaban sonando.
+* El silencio ahora también detiene los efectos que ya estaban sonando.
 * Efecto de reparto acortado a 1,5 segundos.
-* Correccion de la superposicion entre el mensaje del HUD y las cartas del rival.
-
-## [0.1.0]- 2026-09-01
-### Modificado
-* Se amplio el README con la plataforma de desarrollo objetivo, los requisitos previos y las instrucciones de clonado y ejecucion para Windows, Linux y macOS.
-* Se amplio la descripcion del videojuego.
-
-### Arreglado
-* Se corrigio el enlace a la Propuesta del Proyecto en el README, que no estaba escrito como enlace valido.
-* Se unifico la propuesta en la Wiki: la version completa quedo en la pagina "Propuesta del Proyecto" y el Home paso a ser el indice.
-
-## [0.1.0] - 2026-07-17
-### Agregado
-* Estructura inicial del proyecto base utilizando LibGDX Liftoff con Java 21.
-* Configuración del entorno de desarrollo en IntelliJ IDEA y repositorio Git público.
-* Creación de la documentación obligatoria (Propuesta en la Wiki y README detallado).
+* Corrección de la superposición entre el mensaje del HUD y las cartas del rival.
