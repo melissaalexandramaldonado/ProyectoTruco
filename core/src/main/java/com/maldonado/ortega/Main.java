@@ -1,3 +1,4 @@
+
 package com.maldonado.ortega;
 
 import com.badlogic.gdx.Game;
@@ -7,12 +8,13 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 public class Main extends Game {
 
     public static final float ANCHO = 1280f;
-    public static final float ALTO  = 720f;
+    public static final float ALTO = 720f;
 
     public SpriteBatch batch;
     public BitmapFont fuente;
     public BitmapFont fuenteTitulo;
     public Recursos recursos;
+    public BaseDatos baseDatos;
 
     @Override
     public void create() {
@@ -26,15 +28,23 @@ public class Main extends Game {
 
         recursos = new Recursos();
 
+        baseDatos = new BaseDatos();
+        baseDatos.conectar();
+
         setScreen(new PantallaMenu(this));
     }
 
     @Override
     public void dispose() {
         super.dispose();
+
         batch.dispose();
         fuente.dispose();
         fuenteTitulo.dispose();
         recursos.dispose();
+
+        if (baseDatos != null) {
+            baseDatos.desconectar();
+        }
     }
 }
